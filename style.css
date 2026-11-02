@@ -1,4 +1,4 @@
-/* CUSTOM FONT MAPPINGS */
+/* CUSTOM FONT DEFINITIONS */
 @font-face {
   font-family: 'DripFont';
   src: url('./assets/dripfont.ttf') format('truetype');
@@ -35,8 +35,10 @@
   box-sizing: border-box;
 }
 
+/* SMOOTH SCROLLING FOR NAVIGATION BUTTONS */
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: var(--header-height);
 }
 
 body {
@@ -44,6 +46,7 @@ body {
   color: var(--text-white);
   font-family: var(--font-body);
   overflow-x: hidden;
+  width: 100%;
 }
 
 /* NAVBAR */
@@ -269,27 +272,35 @@ body {
   line-height: 1.3;
 }
 
-/* GALLERY SECTION */
+/* FIXED GALLERY GRID */
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
+  width: 100%;
+}
+
+.gallery-item {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 12px;
 }
 
 .gallery-item img {
   width: 100%;
-  height: 260px;
+  height: 280px;
   object-fit: cover;
-  border-radius: 12px;
   display: block;
   border: 1px solid #222;
+  border-radius: 12px;
 }
 
-/* CTA & FOOTER (STRICTLY CENTERED FOR PC FULL SCREEN) */
+/* CTA SECTION */
 .cta-section {
   flex-direction: column;
   align-items: center;
   padding-bottom: 0;
+  overflow: hidden;
 }
 
 .cta-content {
@@ -332,8 +343,14 @@ body {
   text-decoration: none;
 }
 
+/* FULL-BLEED RED FOOTER (NO SIDE GAPS) */
 .footer {
-  width: 100%;
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
   background-color: var(--red-accent);
   color: #000;
   display: flex;
