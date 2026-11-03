@@ -3,127 +3,210 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>PHASLOWEEN '26 | Inkvent OUTR</title>
+  <title>Phasloween</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- FIXED TOP HEADER -->
+  <!-- Sticky Header Nav -->
   <header class="navbar">
-    <div class="logo">
-      <img src="assets/ink-logo.png" alt="Ink Logo" />
+    <div class="nav-container">
+      <a href="#hero" class="logo-link">
+        <img src="assets/ink-logo.png" alt="Phasloween Logo" class="logo-img" />
+      </a>
+
+      <!-- Desktop Links -->
+      <nav class="desktop-nav">
+        <a href="#hero" class="nav-link boxy-font">HOME</a>
+        <a href="#about" class="nav-link boxy-font">ABOUT</a>
+        <a href="#events" class="nav-link boxy-font">EVENTS</a>
+        <a href="#gallery" class="nav-link boxy-font">GALLERY</a>
+        <a href="#register" class="btn-register boxy-font">REGISTER</a>
+      </nav>
+
+      <!-- Hamburger Button (Mobile) -->
+      <button class="hamburger-btn" id="hamburgerBtn" aria-label="Open Navigation Menu">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </button>
     </div>
-    <nav class="desktop-nav">
-      <a href="#hero">HOME</a>
-      <a href="#about">ABOUT</a>
-      <a href="#events">EVENTS</a>
-      <a href="#gallery">GALLERY</a>
-    </nav>
-    <a href="#register" class="btn-register-nav">REGISTER</a>
   </header>
 
-  <main class="page-wrapper">
+  <!-- Mobile Drawer Menu Overlay -->
+  <div class="mobile-overlay" id="mobileOverlay"></div>
+  <aside class="mobile-drawer" id="mobileDrawer">
+    <button class="close-btn" id="closeDrawerBtn" aria-label="Close Navigation Menu">&times;</button>
+    <nav class="mobile-nav">
+      <a href="#hero" class="mobile-nav-link boxy-font">HOME</a>
+      <a href="#about" class="mobile-nav-link boxy-font">ABOUT</a>
+      <a href="#events" class="mobile-nav-link boxy-font">EVENTS</a>
+      <a href="#gallery" class="mobile-nav-link boxy-font">GALLERY</a>
+      <a href="#register" class="btn-register mobile-register-btn boxy-font">REGISTER</a>
+    </nav>
+  </aside>
 
-    <!-- HERO SECTION -->
-    <section class="hero-section" id="hero">
-      <video class="bg-vid" autoplay loop muted playsinline>
+  <!-- Hero Section (Full Screen Video with Header) -->
+  <section id="hero" class="hero-section">
+    <div class="video-container">
+      <video autoplay loop muted playsinline class="bg-video">
         <source src="assets/bgvid.mp4" type="video/mp4" />
+        <source src="assets/bgvid" type="video/mp4" />
       </video>
-      <div class="hero-content">
-        <img src="assets/phlogo.png" alt="Phasloween Logo" class="phlogo" />
-        <span class="hero-scroll-hint">SCROLL</span>
+      <div class="hero-overlay-content">
+        <img src="assets/phlogo.png" alt="Phasloween Main Badge" class="main-badge" />
+        <div class="hero-subtext drip-font">scroll</div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- ABOUT / DETAILS SECTION -->
-    <section class="content-section details-section" id="about">
-      <div class="section-container details-layout">
-        <div class="details-left">
-          <h2 class="bloody-heading">HALLOWEEN EVE AT OUTR</h2>
-          <p class="description">
-            When the sun sets, the spooky vibes take in! Step into a world where your imagination runs wild, and every corner has a surprise waiting for you. From creepy games and thrilling challenges to unexpected terrors, PHASLOWEEN is bringing you an evening packed with creation, thrilling fun, and unforgettable memories.
+  <!-- About Section -->
+  <section id="about" class="about-section">
+    <div class="container about-grid">
+      <div class="about-text-col">
+        <h2 class="section-title boxy-font">HAILoWeeN's Eve At OUTR</h2>
+        <div class="body-font about-copy">
+          <p>
+            When the sun sets, the spooky vibes come alive! Step into a world where your imagination runs wild, and every corner has a surprise waiting for you. From spooky games and thrilling challenges to live music and unexpected terrors, PHASLOWEEN is bringing you an unforgettable night of fun, frights, and crazy energy.
           </p>
-          <p class="description sub-text">
-            Get ready to experience the night and embrace the scares! Come interact, participate, and make this a night to remember!
+          <p>
+            Get ready to experience the unknown, embrace the dark, and join us for a night where memories will haunt you forever!
           </p>
         </div>
+      </div>
 
-        <div class="details-right">
-          <div class="event-meta">
-            <div class="meta-item">
-              <span class="meta-label">31st Oct, 2026</span>
-            </div>
-            <div class="meta-item">
-              <span class="meta-label">Walking Ave, OUTR</span>
-            </div>
-            <div class="meta-item">
-              <span class="meta-label">6pm Onwards</span>
-            </div>
+      <div class="about-details-col">
+        <div class="event-meta">
+          <div class="meta-item">
+            <span class="meta-date boxy-font">11th</span>
+            <span class="meta-label body-font">Nov 26</span>
           </div>
-          <button class="btn-black">WHEN & WHERE</button>
+          <div class="meta-item">
+            <span class="meta-time boxy-font">7 PM</span>
+            <span class="meta-label body-font">Onwards</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-loc boxy-font">parking Area</span>
+            <span class="meta-label body-font">OUTR</span>
+          </div>
+        </div>
+        <div class="action-wrap">
+          <a href="#events" class="btn-action boxy-font">KNOW MORE</a>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- EVENTS SECTION -->
-    <section class="content-section events-section" id="events">
-      <div class="section-container">
-        <h2 class="section-title">WHAT'S HAPPENING</h2>
-        <div class="events-grid">
-          <a href="events.html" class="event-card-link">
-            <div class="event-card">
-              <h3>DOPPELGANGER DOODLE</h3>
-            </div>
-          </a>
-          <a href="events.html" class="event-card-link">
-            <div class="event-card">
-              <h3>CURSE & CROSS</h3>
-            </div>
-          </a>
-          <a href="events.html" class="event-card-link">
-            <div class="event-card">
-              <h3>BOOM THE BALLOON</h3>
-            </div>
-          </a>
+  <!-- Events Section -->
+  <section id="events" class="events-section">
+    <div class="container">
+      <h2 class="section-title drip-font">WHATS HAPPENING</h2>
+      <div class="events-grid">
+        <div class="event-card event-trigger">
+          <h3 class="boxy-font event-card-title">stage <br>Events</h3>
+        </div>
+        <div class="event-card event-trigger">
+          <h3 class="boxy-font event-card-title">acTivIties</h3>
+        </div>
+        <div class="event-card event-trigger">
+          <h3 class="boxy-font event-card-title">Display</h3>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- GALLERY SECTION -->
-    <section class="content-section gallery-section" id="gallery">
-      <div class="section-container">
-        <h2 class="section-title">GALLERY</h2>
-        <div class="gallery-grid">
-          <div class="gallery-item"><img src="assets/gallery-1.jpg" alt="Gallery 1" /></div>
-          <div class="gallery-item"><img src="assets/gallery-2.jpg" alt="Gallery 2" /></div>
-          <div class="gallery-item"><img src="assets/gallery-3.jpg" alt="Gallery 3" /></div>
-          <div class="gallery-item"><img src="assets/gallery-4.jpg" alt="Gallery 4" /></div>
-          <div class="gallery-item"><img src="assets/gallery-5.jpg" alt="Gallery 5" /></div>
-          <div class="gallery-item"><img src="assets/gallery-6.jpg" alt="Gallery 6" /></div>
-        </div>
+  <!-- Gallery Section -->
+  <section id="gallery" class="gallery-section">
+    <div class="container">
+      <h2 class="section-title drip-font">GALLERY</h2>
+      <div class="gallery-grid">
+        <div class="gallery-item"><img src="assets/gallery-1.jpg" alt="Gallery Photo 1" /></div>
+        <div class="gallery-item"><img src="assets/gallery-2.jpg" alt="Gallery Photo 2" /></div>
+        <div class="gallery-item"><img src="assets/gallery-3.jpg" alt="Gallery Photo 3" /></div>
+        <div class="gallery-item"><img src="assets/gallery-4.jpg" alt="Gallery Photo 4" /></div>
+        <div class="gallery-item"><img src="assets/gallery-5.jpg" alt="Gallery Photo 5" /></div>
+        <div class="gallery-item"><img src="assets/gallery-6.jpg" alt="Gallery Photo 6" /></div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- JOIN THE NIGHT & FOOTER -->
-    <section class="content-section cta-section" id="register">
-      <div class="section-container cta-content">
-        <h2 class="cta-title">JOIN THE <span class="highlight-red">NIGHT</span></h2>
-        <p class="cta-sub">BE PART OF THE SCARES</p>
-        <a href="events.html" class="btn-brochure">BROCHURE &rarr;</a>
+  <!-- CTA Section -->
+  <section id="register" class="cta-section">
+    <div class="container cta-content">
+      <h2 class="cta-heading drip-font">JØIN THE <span class="highlight-red">NIGHT</span></h2>
+      <p class="cta-subbody drip-font">BE PART OF THE SCARES</p>
+      <!-- Google Drive Brochure Redirect Link Placeholder -->
+      <a href="https://drive.google.com/file/d/YOUR_DRIVE_FILE_ID_HERE/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-cta boxy-font">Brochure</a>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer class="footer-section">
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <h4 class="footer-title drip-font">CONTACT US</h4>
       </div>
+      <div class="footer-col">
+        <h4 class="footer-title drip-font">QUICK LINKS</h4>
+      </div>
+    </div>
+  </footer>
 
-      <!-- FULL-BLEED RED FOOTER -->
-      <footer class="footer">
-        <div class="footer-col">
-          <h3>CONTACT US</h3>
-        </div>
-        <div class="footer-col">
-          <h3>QUICK LINKS</h3>
-        </div>
-      </footer>
-    </section>
+  <!-- Modal Pop-up -->
+  <div class="modal-backdrop" id="updateModal">
+    <div class="modal-box">
+      <h3 class="drip-font modal-title">UPDATED SOON</h3>
+      <p class="body-font modal-text">Details for this event will be announced shortly. Stay tuned!</p>
+      <button class="btn-modal-back boxy-font" id="modalBackBtn">BACK</button>
+    </div>
+  </div>
 
-  </main>
+  <script>
+    const hamburgerBtn = document.getElementById('hamburgerBtn');
+    const closeDrawerBtn = document.getElementById('closeDrawerBtn');
+    const mobileDrawer = document.getElementById('mobileDrawer');
+    const mobileOverlay = document.getElementById('mobileOverlay');
+    const mobileNavLinks = document.querySelectorAll('.mobile-nav-link, .mobile-register-btn');
 
+    function openMenu() {
+      mobileDrawer.classList.add('active');
+      mobileOverlay.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeMenu() {
+      mobileDrawer.classList.remove('active');
+      mobileOverlay.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    hamburgerBtn.addEventListener('click', openMenu);
+    closeDrawerBtn.addEventListener('click', closeMenu);
+    mobileOverlay.addEventListener('click', closeMenu);
+
+    mobileNavLinks.forEach(link => {
+      link.addEventListener('click', closeMenu);
+    });
+
+    const eventCards = document.querySelectorAll('.event-trigger');
+    const updateModal = document.getElementById('updateModal');
+    const modalBackBtn = document.getElementById('modalBackBtn');
+
+    eventCards.forEach(card => {
+      card.addEventListener('click', () => {
+        updateModal.classList.add('active');
+      });
+    });
+
+    modalBackBtn.addEventListener('click', () => {
+      updateModal.classList.remove('active');
+    });
+
+    updateModal.addEventListener('click', (e) => {
+      if (e.target === updateModal) {
+        updateModal.classList.remove('active');
+      }
+    });
+  </script>
 </body>
 </html>
